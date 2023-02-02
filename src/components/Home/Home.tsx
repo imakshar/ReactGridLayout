@@ -5,6 +5,7 @@ import "react-resizable/css/styles.css";
 import DesignationChart from "../DesignationChart/DesignationChart";
 import EmployeeAvailabilityChart from "../EmployeeAvailabilityChart/EmployeeAvailabilityChart";
 import EmployeeHistoryChart from "../EmployeeHistoryChart/EmployeeHistoryChart";
+import Navbar from "../Navbar/Navbar";
 import OnbordingHistoryChart from "../OnbordingHistoryChart/OnbordingHistoryChart";
 const defaultLayout: Layout[] = [
   { i: "a", x: 0, y: 0, w: 6, h: 2, minH: 2 },
@@ -18,6 +19,7 @@ const Home = () => {
   const [layout, setLayout] = useState(defaultLayout);
   return (
     <div>
+      <Navbar />
       <ResponsiveGridLayout
         className="layout"
         layouts={{ lg: layout, md: layout, sm: layout }}
