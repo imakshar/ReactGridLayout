@@ -1,13 +1,18 @@
 import { useState } from "react";
-export interface EmployeeInfo {
-    employeeData : any;
-    setEmployeeData : any;
+export interface IEmployeeDesignationData {
+  name: string;
+  count: number;
 }
-export const useEmployeeData = (): EmployeeInfo => {
-  const [employeeData, setEmployeeData] = useState({
-    name: "John Doe",
-    age: 32,
-  });
+export interface EmployeeInfo {
+  employeeDesignationData: IEmployeeDesignationData[];
+}
 
-  return { employeeData, setEmployeeData };
+const defaultData: EmployeeInfo = {
+  employeeDesignationData: [],
+};
+
+export const useEmployeeData = (): EmployeeInfo => {
+  const [employeeData, setEmployeeData] = useState<EmployeeInfo>(defaultData);
+
+  return employeeData
 };
