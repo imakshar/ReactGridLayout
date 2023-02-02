@@ -11,11 +11,11 @@ import Typography from "@mui/material/Typography";
 
 const theme = createTheme();
 interface IUserCredentials {
-  email: string;
+  username: string;
   password: string;
 }
 const defaultState: IUserCredentials = {
-  email: "",
+  username: "",
   password: "",
 };
 const LoginPage = () => {
@@ -64,14 +64,13 @@ const LoginPage = () => {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              id="username"
+              label="Username"
+              name="username"
+              autoComplete="username"
               autoFocus
-              value={userCredentials.email}
-              onChange={(e) => handleOnChange(e, "email")}
-              type="email"
+              value={userCredentials.username}
+              onChange={(e) => handleOnChange(e, "username")}
             />
             <TextField
               margin="normal"
@@ -91,6 +90,7 @@ const LoginPage = () => {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              disabled = { !userCredentials.username.length || !userCredentials.password.length }
             >
               Sign In
             </Button>
