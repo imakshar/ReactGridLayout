@@ -1,34 +1,20 @@
 import { Box } from "@mui/material";
 import {
-    CartesianGrid,
-    Legend,
-    Line,
-    LineChart,
-    ResponsiveContainer,
-    Tooltip,
-    XAxis,
-    YAxis
+  CartesianGrid,
+  Legend,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
 } from "recharts";
+import { useContext } from "react";
+import EmployeeInfoContext from "../../Context";
+import { EmployeeInfo } from "../../EmployeeContext";
 
-const designationData = [
-  {
-    offered: 1200,
-    onboarded: 1000,
-  },
-  {
-    offered: 1000,
-    onboarded: 700,
-  },
-  {
-    offered: 500,
-    onboarded: 400,
-  },
-  {
-    offered: 700,
-    onboarded: 650,
-  },
-];
 const OnbordingHistoryChart = () => {
+  const { employeeOnboardingData } = useContext<EmployeeInfo>(EmployeeInfoContext);
   return (
     <Box height="100%">
       <Box display="flex" width="100%" height="100%" justifyContent="center">
@@ -37,7 +23,7 @@ const OnbordingHistoryChart = () => {
             <LineChart
               width={500}
               height={300}
-              data={designationData}
+              data={employeeOnboardingData}
               margin={{
                 top: 5,
                 right: 30,

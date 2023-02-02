@@ -1,6 +1,8 @@
 import { Box } from "@mui/material";
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
-
+import EmployeeInfoContext from "../../Context";
+import { useContext } from "react";
+import { EmployeeInfo } from "../../EmployeeContext";
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 const RADIAN = Math.PI / 180;
@@ -23,32 +25,9 @@ const renderCustomizedLabel = (args: any): any => {
     </text>
   );
 };
-const designationData = [
-  {
-    type: "Designations",
-    name: "Software Engineer",
-    value: 4000,
-  },
-  {
-    type: "Designations",
 
-    name: "Senior Software Engineer",
-    value: 3000,
-  },
-  {
-    type: "Designations",
-
-    name: "System Analyst",
-    value: 1000,
-  },
-  {
-    type: "Designations",
-
-    name: "Manager",
-    value: 500,
-  },
-];
 const DesignationChart = () => {
+  const { employeeDesignationData } = useContext<EmployeeInfo>(EmployeeInfoContext);
   return (
     <Box height="100%">
       <Box display="flex" width="100%" height="100%" justifyContent="center">
@@ -56,7 +35,7 @@ const DesignationChart = () => {
           <ResponsiveContainer height="100%" width="100%">
             <PieChart height={1200} width={1200}>
               <Pie
-                data={designationData}
+                data={employeeDesignationData}
                 cx="50%"
                 cy="50%"
                 labelLine={false}
@@ -65,7 +44,7 @@ const DesignationChart = () => {
                 fill="#8884d8"
                 dataKey="value"
               >
-                {designationData.map((entry, index) => (
+                {employeeDesignationData.map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
                     fill={COLORS[index % COLORS.length]}

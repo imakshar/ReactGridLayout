@@ -1,18 +1,40 @@
 import { useState } from "react";
-export interface IEmployeeDesignationData {
+import { availabilityData } from "./data/employeeAvailabilityData";
+import { designationData } from "./data/employeeDesignationData";
+import { historyData } from "./data/employeeHistoryData";
+import { onboardingData } from "./data/employeeOnboardingData";
+export interface IEmployeeDesignatioInfo {
   name: string;
-  count: number;
+  value: number;
+}
+export interface IEmployeeAvailabilityInfo {
+  name: string;
+  availableEmployees: number;
+}
+export interface IEmployeeHistoryInfo {
+  joinee: number;
+  leavers: number;
+}
+export interface IEmployeeOnboardingInfo {
+  offered: number;
+  onboarded: number;
 }
 export interface EmployeeInfo {
-  employeeDesignationData: IEmployeeDesignationData[];
+  employeeDesignationData: IEmployeeDesignatioInfo[];
+  employeeAvailabilityData: IEmployeeAvailabilityInfo[];
+  employeeHistoryData: IEmployeeHistoryInfo[];
+  employeeOnboardingData: IEmployeeOnboardingInfo[];
 }
 
 const defaultData: EmployeeInfo = {
-  employeeDesignationData: [],
+  employeeDesignationData: designationData,
+  employeeAvailabilityData: availabilityData,
+  employeeHistoryData: historyData,
+  employeeOnboardingData: onboardingData,
 };
 
 export const useEmployeeData = (): EmployeeInfo => {
-  const [employeeData, setEmployeeData] = useState<EmployeeInfo>(defaultData);
+  const [employeeData] = useState<EmployeeInfo>(defaultData);
 
-  return employeeData
+  return employeeData;
 };

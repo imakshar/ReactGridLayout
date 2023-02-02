@@ -1,6 +1,6 @@
 import React from "react";
 import { EmployeeInfo } from "./EmployeeContext";
 
-const MyContext = React.createContext<EmployeeInfo | null>(null);
+const EmployeeInfoContext = React.createContext<EmployeeInfo>(null!);
 
-export default MyContext;
+export default EmployeeInfoContext;
