@@ -14,7 +14,7 @@ import { EmployeeInfo } from "../../Store/EmployeeContext";
 const EmployeeAvailabilityChart = () => {
   const { employeeAvailabilityData } = useContext<EmployeeInfo>(EmployeeInfoContext);
   return (
-    <Box height="90%">
+    <Box height="90%" data-testid="employeeAvailabilityChartTest" >
       <Box display="flex" width="100%" height="100%" justifyContent="center">
         <Box display="flex" alignItems="center" width="100%">
           <ResponsiveContainer height="100%" width="100%">

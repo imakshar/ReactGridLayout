@@ -15,16 +15,18 @@ const CustomSnackBar: React.FunctionComponent<Iprops> = ({
   position,
 }) => {
   return (
-    <Snackbar
-      anchorOrigin={position}
-      open={open}
-      autoHideDuration={3000}
-      onClose={onClose}
-    >
-      <Alert onClose={onClose} severity={severity} sx={{ width: "100%" }}>
-        {message}
-      </Alert>
-    </Snackbar>
+    <div data-testid="customSnackbar">
+      <Snackbar
+        anchorOrigin={position}
+        open={open}
+        autoHideDuration={3000}
+        onClose={onClose}
+      >
+        <Alert onClose={onClose} severity={severity} sx={{ width: "100%" }}>
+          {message}
+        </Alert>
+      </Snackbar>
+    </div>
   );
 };
 

@@ -16,7 +16,7 @@ import { EmployeeInfo } from "../../Store/EmployeeContext";
 const EmployeeHistoryChart = () => {
   const { employeeHistoryData } = useContext<EmployeeInfo>(EmployeeInfoContext);
   return (
-    <Box height="100%">
+    <Box height="100%" data-testid="employeeHistoryChartTest">
       <Box display="flex" width="100%" height="100%" justifyContent="center">
         <Box display="flex" alignItems="center" width="100%">
           <ResponsiveContainer height="100%" width="100%">

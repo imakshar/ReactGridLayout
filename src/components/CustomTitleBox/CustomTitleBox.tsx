@@ -12,12 +12,13 @@ const CustomTitleBox: React.FunctionComponent<IProps> = ({
   icon,
 }: IProps) => {
   return (
-    <Box sx={{ height: "100%" , mt: 1}}>
+    <Box sx={{ height: "100%", mt: 1 }}>
       <Box
         display="flex"
         width="100%"
         alignItems="center"
         justifyContent="center"
+        data-testid="customTitleBox"
       >
         <Box>{icon}</Box>
         <Box sx={{ ml: 2 }}>

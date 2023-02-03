@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate();
   return (
-    <AppBar position="static">
+    <AppBar position="static" data-testid="appbar">
         <Toolbar disableGutters>
           <Box
             display="flex"
