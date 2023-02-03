@@ -26,45 +26,67 @@ const Home = () => {
   const [layout, setLayout] = useState<Layout[]>(defaultLayout);
   return (
     <div>
-      <Navbar />
-      <ResponsiveGridLayout
-        className="layout"
-        layouts={{ lg: layout, md: layout, sm: layout }}
-        breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
-        cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
-        onLayoutChange={(currentLayout) => {
-          setLayout(currentLayout);
-        }}
-        rowHeight={155}
-      >
-        <Paper key="designationChart" elevation={6}>
-          <CustomTitleBox title="Designation Statistics" icon={<PeopleIcon />}>
-            <DesignationChart />
-          </CustomTitleBox>
-        </Paper>
-
-        <Paper key="employeeAvailabilityChart" elevation={6}>
-          <CustomTitleBox
-            title="Employee Availability"
-            icon={<EventAvailableIcon />}
+      <div data-testid="navbar">
+        <Navbar />
+      </div>
+      <div data-testid="responsiveGridLayout">
+        <ResponsiveGridLayout
+          className="layout"
+          layouts={{ lg: layout, md: layout, sm: layout }}
+          breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
+          cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
+          onLayoutChange={(currentLayout) => {
+            setLayout(currentLayout);
+          }}
+          rowHeight={155}
+        >
+          <Paper
+            key="designationChart"
+            elevation={6}
+            data-testid="designationChart"
           >
-            <EmployeeAvailabilityChart />
-          </CustomTitleBox>
-        </Paper>
-        
-        <Paper key="onbordingHistoryChart" elevation={6}>
-          <CustomTitleBox title="Onboarding Statistics" icon={<PollIcon />}>
-            <OnbordingHistoryChart />
-          </CustomTitleBox>
-        </Paper>
+            <CustomTitleBox
+              title="Designation Statistics"
+              icon={<PeopleIcon />}
+            >
+              <DesignationChart />
+            </CustomTitleBox>
+          </Paper>
 
-        <Paper key="employeeHistoryChart" elevation={6}>
-          <CustomTitleBox title="Employee History" icon={<HistoryIcon />}>
-            <EmployeeHistoryChart />
-          </CustomTitleBox>
-        </Paper>
+          <Paper
+            key="employeeAvailabilityChart"
+            elevation={6}
+            data-testid="employeeAvailabilityChart"
+          >
+            <CustomTitleBox
+              title="Employee Availability"
+              icon={<EventAvailableIcon />}
+            >
+              <EmployeeAvailabilityChart />
+            </CustomTitleBox>
+          </Paper>
 
-      </ResponsiveGridLayout>
+          <Paper
+            key="onbordingHistoryChart"
+            elevation={6}
+            data-testid="onbordingHistoryChart"
+          >
+            <CustomTitleBox title="Onboarding Statistics" icon={<PollIcon />}>
+              <OnbordingHistoryChart />
+            </CustomTitleBox>
+          </Paper>
+
+          <Paper
+            key="employeeHistoryChart"
+            elevation={6}
+            data-testid="employeeHistoryChart"
+          >
+            <CustomTitleBox title="Employee History" icon={<HistoryIcon />}>
+              <EmployeeHistoryChart />
+            </CustomTitleBox>
+          </Paper>
+        </ResponsiveGridLayout>
+      </div>
     </div>
   );
 };

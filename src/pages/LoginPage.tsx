@@ -55,7 +55,7 @@ const LoginPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
-        <CustomSnackBar
+        <CustomSnackBar 
           message="Invalid Credentials"
           onClose={handleSnackbarClose}
           open={isSnackbarOpen}
@@ -73,7 +73,7 @@ const LoginPage = () => {
         >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }} />
 
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" variant="h5" data-testid="siginLabel">
             Sign in
           </Typography>
           <Box
@@ -83,6 +83,7 @@ const LoginPage = () => {
             sx={{ mt: 1 }}
           >
             <TextField
+              data-testid= "usernameInput"
               margin="normal"
               required
               fullWidth
@@ -95,6 +96,7 @@ const LoginPage = () => {
               onChange={(e) => handleOnChange(e, "username")}
             />
             <TextField
+              data-testid= "passwordInput"
               margin="normal"
               required
               fullWidth
@@ -108,6 +110,7 @@ const LoginPage = () => {
             />
 
             <Button
+              data-testid= "submitButton"
               type="submit"
               fullWidth
               variant="contained"

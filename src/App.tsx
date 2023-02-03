@@ -8,9 +8,11 @@ function App() {
   const employeeContext = useEmployeeData();
 
   return (
-    <EmployeeInfoContext.Provider value={employeeContext}>
-      <RouterProvider router={router} />
-    </EmployeeInfoContext.Provider>
+    <div data-testid="App"> 
+      <EmployeeInfoContext.Provider value={employeeContext}>
+        <RouterProvider router={router} />
+      </EmployeeInfoContext.Provider>
+    </div>
   );
 }
 

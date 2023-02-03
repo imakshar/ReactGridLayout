@@ -26,7 +26,7 @@ export interface EmployeeInfo {
   employeeOnboardingData: IEmployeeOnboardingInfo[];
 }
 
-const defaultData: EmployeeInfo = {
+export const defaultData: EmployeeInfo = {
   employeeDesignationData: designationData,
   employeeAvailabilityData: availabilityData,
   employeeHistoryData: historyData,
