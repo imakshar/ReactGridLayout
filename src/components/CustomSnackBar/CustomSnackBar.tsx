@@ -17,6 +17,7 @@ const CustomSnackBar: React.FunctionComponent<Iprops> = ({
   return (
     <div data-testid="customSnackbar">
       <Snackbar
+        data-cy="snackbar"
         anchorOrigin={position}
         open={open}
         autoHideDuration={3000}

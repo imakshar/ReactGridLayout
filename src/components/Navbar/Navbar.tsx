@@ -47,6 +47,7 @@ const Navbar = () => {
               <Box sx={{ flexGrow: 1 }}>
                 <Tooltip title="Logout">
                   <LogoutIcon
+                    data-cy="logout"
                     sx={{ mr: 2 }}
                     onClick={() => navigate("/")}
                   />

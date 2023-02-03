@@ -73,7 +73,7 @@ const LoginPage = () => {
         >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }} />
 
-          <Typography component="h1" variant="h5" data-testid="siginLabel">
+          <Typography component="h1" variant="h5" data-testid="siginLabel" data-cy="signinLabelCy">
             Sign in
           </Typography>
           <Box
@@ -84,6 +84,7 @@ const LoginPage = () => {
           >
             <TextField
               data-testid= "usernameInput"
+              data-cy='usernameInput'
               margin="normal"
               required
               fullWidth
@@ -97,6 +98,7 @@ const LoginPage = () => {
             />
             <TextField
               data-testid= "passwordInput"
+              data-cy = "passwordInput"
               margin="normal"
               required
               fullWidth
@@ -111,6 +113,7 @@ const LoginPage = () => {
 
             <Button
               data-testid= "submitButton"
+              data-cy="submitButton"
               type="submit"
               fullWidth
               variant="contained"
