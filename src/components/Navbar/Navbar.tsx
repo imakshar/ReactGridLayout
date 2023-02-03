@@ -2,7 +2,6 @@ import BusinessIcon from "@mui/icons-material/Business";
 import LogoutIcon from "@mui/icons-material/Logout";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
@@ -12,17 +11,19 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box
             display="flex"
             justifyContent="space-between"
             width="100%"
             alignItems="center"
+            sx={{
+              px:4
+            }}
           >
             <Box display="flex" alignItems="center">
               <BusinessIcon
-                sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
+                sx={{ display: { md: "flex" }, mr: 2 }}
               />
               <Typography
                 variant="h6"
@@ -47,7 +48,7 @@ const Navbar = () => {
               <Box sx={{ flexGrow: 1 }}>
                 <Tooltip title="Logout">
                   <LogoutIcon
-                    sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
+                    sx={{ mr: 2 }}
                     onClick={() => navigate("/")}
                   />
                 </Tooltip>
@@ -55,7 +56,6 @@ const Navbar = () => {
             </Box>
           </Box>
         </Toolbar>
-      </Container>
     </AppBar>
   );
 };
