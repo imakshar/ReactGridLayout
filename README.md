@@ -39,6 +39,16 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## For Starting SonarQube server, run the following command.
+`docker-compose up`
+
+## In order to log in to SonarQube, go to http://localhost:9000. You should use these credentials, And Link your project with key.
+
+## Run the following command in another terminal.
+`node ./sonarqube/sonarscan.js`
+
+## Sonarqube Setup Reference https://medium.com/jrtec/static-analysis-using-sonarqube-in-a-react-webapp-dd4b335d6062
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
