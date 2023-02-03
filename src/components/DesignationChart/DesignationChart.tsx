@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
-import EmployeeInfoContext from "../../Context";
+import EmployeeInfoContext from "../../Store/Context";
 import { useContext } from "react";
-import { EmployeeInfo } from "../../EmployeeContext";
+import { EmployeeInfo } from "../../Store/EmployeeContext";
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 const RADIAN = Math.PI / 180;

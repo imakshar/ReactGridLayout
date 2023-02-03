@@ -43,7 +43,6 @@ const Navbar = () => {
                 Employee Info
               </Typography>
             </Box>
-
             <Box>
               <Box sx={{ flexGrow: 1 }}>
                 <Tooltip title="Logout">

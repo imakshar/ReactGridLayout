@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { availabilityData } from "./data/employeeAvailabilityData";
-import { designationData } from "./data/employeeDesignationData";
-import { historyData } from "./data/employeeHistoryData";
-import { onboardingData } from "./data/employeeOnboardingData";
+import { availabilityData } from "../data/employeeAvailabilityData";
+import { designationData } from "../data/employeeDesignationData";
+import { historyData } from "../data/employeeHistoryData";
+import { onboardingData } from "../data/employeeOnboardingData";
 export interface IEmployeeDesignatioInfo {
   name: string;
   value: number;

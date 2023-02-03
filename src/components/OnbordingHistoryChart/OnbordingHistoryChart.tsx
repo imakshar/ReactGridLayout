@@ -10,8 +10,8 @@ import {
   YAxis,
 } from "recharts";
 import { useContext } from "react";
-import EmployeeInfoContext from "../../Context";
-import { EmployeeInfo } from "../../EmployeeContext";
+import EmployeeInfoContext from "../../Store/Context";
+import { EmployeeInfo } from "../../Store/EmployeeContext";
 
 const OnbordingHistoryChart = () => {
   const { employeeOnboardingData } = useContext<EmployeeInfo>(EmployeeInfoContext);
@@ -37,8 +37,8 @@ const OnbordingHistoryChart = () => {
               <Tooltip />
               <Legend />
 
-              <Line type="monotone" dataKey="offered" stroke="#82ca9d" />
-              <Line type="monotone" dataKey="onboarded" stroke="#82ca9d" />
+              <Line type="monotone" dataKey="offered" stroke="#ffa31a" />
+              <Line type="monotone" dataKey="onboarded" stroke="#269900" />
             </LineChart>
           </ResponsiveContainer>
         </Box>

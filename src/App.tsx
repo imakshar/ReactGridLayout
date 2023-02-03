@@ -1,13 +1,14 @@
-import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import EmployeeInfoContext from "./Context";
-import { useEmployeeData } from "./EmployeeContext";
-import router from "./router";
+import router from "./Router/router";
+import EmployeeInfoContext from "./Store/Context";
+import { RouterProvider } from "react-router-dom";
+import { useEmployeeData } from "./Store/EmployeeContext";
+
 function App() {
-  const myContext = useEmployeeData();
+  const employeeContext = useEmployeeData();
 
   return (
-    <EmployeeInfoContext.Provider value={myContext}>
+    <EmployeeInfoContext.Provider value={employeeContext}>
       <RouterProvider router={router} />
     </EmployeeInfoContext.Provider>
   );

@@ -10,8 +10,8 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import EmployeeInfoContext from "../../Context";
-import { EmployeeInfo } from "../../EmployeeContext";
+import EmployeeInfoContext from "../../Store/Context";
+import { EmployeeInfo } from "../../Store/EmployeeContext";
 
 const EmployeeHistoryChart = () => {
   const { employeeHistoryData } = useContext<EmployeeInfo>(EmployeeInfoContext);
@@ -37,8 +37,8 @@ const EmployeeHistoryChart = () => {
               <Tooltip />
               <Legend />
 
-              <Line type="monotone" dataKey="joinee" stroke="#82ca9d" />
-              <Line type="monotone" dataKey="leavers" stroke="#82ca9d" />
+              <Line type="monotone" dataKey="joinee" stroke="#0033cc" />
+              <Line type="monotone" dataKey="leavers" stroke="#cc3300" />
             </LineChart>
           </ResponsiveContainer>
         </Box>

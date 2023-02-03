@@ -1,18 +1,19 @@
+import { useState } from "react";
+import { Paper } from "@mui/material";
+import { Layout, Responsive, WidthProvider } from "react-grid-layout";
+import "react-grid-layout/css/styles.css";
+import "react-resizable/css/styles.css";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import HistoryIcon from "@mui/icons-material/History";
 import PeopleIcon from "@mui/icons-material/People";
 import PollIcon from "@mui/icons-material/Poll";
-import { Paper } from "@mui/material";
-import { useState } from "react";
-import { Layout, Responsive, WidthProvider } from "react-grid-layout";
-import "react-grid-layout/css/styles.css";
-import "react-resizable/css/styles.css";
 import CustomTitleBox from "../components/CustomTitleBox/CustomTitleBox";
 import DesignationChart from "../components/DesignationChart/DesignationChart";
 import EmployeeAvailabilityChart from "../components/EmployeeAvailabilityChart/EmployeeAvailabilityChart";
 import EmployeeHistoryChart from "../components/EmployeeHistoryChart/EmployeeHistoryChart";
 import Navbar from "../components/Navbar/Navbar";
 import OnbordingHistoryChart from "../components/OnbordingHistoryChart/OnbordingHistoryChart";
+
 const defaultLayout: Layout[] = [
   { i: "designationChart", x: 0, y: 0, w: 6, h: 2, minH: 2 },
   { i: "onbordingHistoryChart", x: 0, y: 0, w: 6, h: 2, minH: 2 },
@@ -22,7 +23,7 @@ const defaultLayout: Layout[] = [
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const Home = () => {
-  const [layout, setLayout] = useState(defaultLayout);
+  const [layout, setLayout] = useState<Layout[]>(defaultLayout);
   return (
     <div>
       <Navbar />
@@ -62,6 +63,7 @@ const Home = () => {
             <EmployeeHistoryChart />
           </CustomTitleBox>
         </Paper>
+
       </ResponsiveGridLayout>
     </div>
   );

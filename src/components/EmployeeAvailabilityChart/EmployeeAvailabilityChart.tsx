@@ -8,8 +8,8 @@ import {
   XAxis,
   YAxis
 } from "recharts";
-import EmployeeInfoContext from "../../Context";
-import { EmployeeInfo } from "../../EmployeeContext";
+import EmployeeInfoContext from "../../Store/Context";
+import { EmployeeInfo } from "../../Store/EmployeeContext";
 
 const EmployeeAvailabilityChart = () => {
   const { employeeAvailabilityData } = useContext<EmployeeInfo>(EmployeeInfoContext);
