@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -8,6 +6,10 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import CustomSnackBar from "../components/CustomSnackBar/CustomSnackBar";
+import { staticCreds } from "../data/staticCredentials";
 
 const theme = createTheme();
 interface IUserCredentials {
@@ -20,11 +22,22 @@ const defaultState: IUserCredentials = {
 };
 const LoginPage = () => {
   const navigate = useNavigate();
+  const [isSnackbarOpen, setIsSnackbarOpen] = useState<boolean>(false);
   const [userCredentials, setUserCredentials] =
     useState<IUserCredentials>(defaultState);
 
+  const validateCredentials = (): boolean => {
+    return (
+      userCredentials.username === staticCreds.username &&
+      userCredentials.password === staticCreds.password
+    );
+  };
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (!validateCredentials()) {
+      setIsSnackbarOpen(true);
+      return;
+    }
     navigate("/home");
   };
   const handleOnChange = (
@@ -37,13 +50,22 @@ const LoginPage = () => {
       [key]: value,
     });
   };
+
+  const handleSnackbarClose = () => setIsSnackbarOpen(false);
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
+        <CustomSnackBar
+          message="Invalid Credentials"
+          onClose={handleSnackbarClose}
+          open={isSnackbarOpen}
+          position={{ horizontal: "center", vertical: "top" }}
+          severity="error"
+        />
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 12,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -90,7 +112,10 @@ const LoginPage = () => {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              disabled = { !userCredentials.username.length || !userCredentials.password.length }
+              disabled={
+                !userCredentials.username.length ||
+                !userCredentials.password.length
+              }
             >
               Sign In
             </Button>
